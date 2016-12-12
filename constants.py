@@ -118,7 +118,7 @@ class Constants:
         num_epochs = num_epochs or -1
 
         image_dir = root_dir + '/images/'
-        mask_dir = root_dir + '/masks/'
+        mask_dir = None
 
         return ImageData_async.default_data(image_dir,
                 mask_dir, [patch_size]*2, 1,

@@ -174,10 +174,10 @@ class ImageData(object):
         return self.im_list[sample]
 
     def get_image_obj(self, im_name):
-        return Image(
-                imread(self.image_root + im_name)/256.0,
-                imread(self.mask_root + im_name) != 0,
-                im_name)
+		im = imread(self.image_root + im_name)/256.0
+		mask = imread(self.mask_root + im_name) != 0 if self.mask_root else np.ones(im.shape[:2], dtype=bool)
+
+        return Image(im, mask, im_name)
 
     def ims(self, idx=0):
         return self.get_image_obj(self.im_list[idx])
