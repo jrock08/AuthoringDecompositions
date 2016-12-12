@@ -1,0 +1,3 @@
+[submodule "pyAIUtils"]
+	path = pyAIUtils
+	url = https://github.com/aiUIUC/pyAIUtils.git
